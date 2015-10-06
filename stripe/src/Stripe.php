@@ -2,7 +2,9 @@
 
 namespace Limpalair\Stripe;
 
-use Limpalair\Stripe\Contracts\Stripe as StripeContract;
+use Exception;
+use Stripe\Stripe;
+use Illuminate\Support\Facades\Config;
 
 class Stripe
 {
@@ -10,16 +12,31 @@ class Stripe
 	 * Package version number
 	 */
 	const VERSION = "1.0.0";
-	
-	/**
-	 * The stripe instance
-	 * 
-	 * @var \Limpalair\Stripe\Contracts\StripeContract
-	 */
-	protected $stripe;
 
-	public function __construct(StripeContract as $stripe)
+	/**
+	 * The Stripe API key
+	 * 
+	 * @var string
+	 */
+	protected static $stripeKey;
+	
+
+	public function __construct()
 	{
-		//
+		Stripe::setApiKey($this->getStripeKey());
+	}
+
+	/**
+	 * Get the Stripe API key
+	 * 
+	 * @return string
+	 */
+	public function getStripeKey()
+	{
+		if ( empty(Config::get('services.stripe.secret')) )
+			throw new InvalidArgumentException('Stripe API key not properly configured');
+
+		return Config::get('services.stripe.secret');
+
 	}
 }
