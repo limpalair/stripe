@@ -23,8 +23,8 @@ class StripeServiceProvider extends ServiceProvider
 	 */
 	public function register()
 	{
-		$this->app->bind('Limpalair\Stripe', function($app) {
-			return new Limpalair\Stripe();
+		$this->app->bind('stripeportal', function($app) {
+			return new StripePortal();
 		});
 	}
 
