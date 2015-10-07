@@ -25,7 +25,7 @@ class StripeServiceProvider extends ServiceProvider
 	{
 		$this->app->bind('Limpalair\Stripe', function($app) {
 			return new Limpalair\Stripe();
-		})
+		});
 	}
 
 }
