@@ -4,6 +4,7 @@ namespace Limpalair\Stripe;
 
 use Exception;
 use Stripe\Stripe;
+use Stripe\Customer as StripeCustomer;
 use Illuminate\Support\Facades\Config;
 
 class StripePortal
@@ -28,11 +29,6 @@ class StripePortal
 	public function __construct()
 	{
 		Stripe::setApiKey($this->getStripeKey());
-
-		$customer = \Stripe\Customer::create(array(
-	      'email' => 'customer@example.com',
-		));
-
 	}
 
 	/**
@@ -48,4 +44,29 @@ class StripePortal
 		return Config::get('services.stripe.secret');
 
 	}
+
+	/**
+	 * Create a new customer
+	 * 
+	 * @param  array  $params
+	 * @return Stripe\Customer
+	 */
+	public function createStripeCustomer($params = [])
+	{
+		$customer = StripeCustomer::create($params);
+
+		return $this->getStripeCustomer($customer->id);
+	}
+
+	/**
+	 * Get Stripe customer's information
+	 * 
+	 * @param  string $id
+	 * @return Stripe\Customer
+	 */
+	public function getStripeCustomer($id = null)
+	{
+		return StripeCustomer::retrieve($id);
+	}
+
 }
