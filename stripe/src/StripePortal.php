@@ -83,8 +83,8 @@ class StripePortal
 
 		$options['amount'] = $amount;
 
-		if ( ! array_key_exists('source', $options) && array_key_exists('id', $options) ) {
-			$options['source'] = $this->getStripeCustomerCard($options['id']);
+		if ( ! array_key_exists('source', $options) ) {
+			throw new InvalidArgumentException('Missing credit card information');
 		}
 
 		try {
@@ -95,28 +95,6 @@ class StripePortal
 		}
 
 		return $response;
-	}
-
-	/**
-	 * Get a Stripe customer card
-	 * 
-	 * @param  string $id
-	 * @return Stripe\Collection
-	 */
-	public function getStripeCustomerCard($id = null)
-	{
-		if ( is_null($id) ) {
-			throw new InvalidArgumentException("Retrieval of customer card failed due to null ID");
-		}
-
-		$customer = $this->getStripeCustomer($id);
-
-		$card = $customer->sources->all([
-			'limit' => '1',
-			'object' => 'card'
-		]);
-
-		return $card;
 	}
 
 	/**
