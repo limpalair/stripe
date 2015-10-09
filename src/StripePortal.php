@@ -46,7 +46,9 @@ class StripePortal
 	 */
 	public function getStripeKey()
 	{
-		if ( empty(Config::get('services.stripe.secret')) )
+		$secret = Config::get('services.stripe.secret');
+
+		if ( empty($secret) )
 			throw new InvalidArgumentException('Stripe API key not properly configured');
 
 		return Config::get('services.stripe.secret');
