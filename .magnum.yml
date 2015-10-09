@@ -1,2 +1,8 @@
+before_install:
+  - sudo apt-get install php5-curl
+
+install:
+  - composer install --no-interaction --prefer-source
+
 script:
   - phpunit --verbose
