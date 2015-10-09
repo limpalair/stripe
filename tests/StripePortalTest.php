@@ -5,7 +5,7 @@
  * @author Christophe Limpalair <christf24@gmail.com>
  */
 
-use Limpalair\Stripe;
+use Limpalair\Stripe\StripePortal as StripePortal;
 
 class StripePortalTest extends PHPUnit_Framework_TestCase
 {
