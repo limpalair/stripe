@@ -4,7 +4,6 @@ before_install:
 
 install:
   - composer install --no-interaction --prefer-source
-  - composer dump-autoload
 
 script:
   - phpunit --verbose
