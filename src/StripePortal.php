@@ -10,6 +10,11 @@ use Stripe\Customer as StripeCustomer;
 use Illuminate\Support\Facades\Config;
 use Stripe\Error\Card as StripeErrorCard;
 
+/**
+ * Stripe interface to sell a product
+ *
+ * @author Christophe Limpalair <christf24@hotmail.com>
+ */
 class StripePortal
 {
 	/**
