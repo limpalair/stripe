@@ -2,11 +2,13 @@
 
 namespace Limpalair\Stripe;
 
+use Log;
 use Exception;
 use Stripe\Stripe;
 use Stripe\Charge as StripeCharge;
 use Stripe\Customer as StripeCustomer;
 use Illuminate\Support\Facades\Config;
+use Stripe\Error\Card as StripeErrorCard;
 
 class StripePortal
 {
@@ -89,8 +91,8 @@ class StripePortal
 
 		try {
 			$response StripeCharge::create($options);
-		} catch(\Stripe\Error\Card $e) {
-			\Log::error("Caught Stripe purchase failure: " . $e);
+		} catch(StripeErrorCard $e) {
+			Log::error("Caught Stripe purchase failure: " . $e);
 			return false;
 		}
 
