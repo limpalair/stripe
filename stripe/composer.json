@@ -1,6 +1,6 @@
 {
     "name": "limpalair/stripe",
-    "description": "Limpalair Stripe provides an interface to Stripe's payment system in Laravel.",
+    "description": "Limpalair Stripe provides a simple and non-intrusive interface to Stripe's payment system in Laravel.",
     "keywords": ["laravel", "stripe", "billing"],
     "license": "MIT",
     "authors": [
