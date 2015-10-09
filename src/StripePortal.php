@@ -97,7 +97,7 @@ class StripePortal
 		}
 
 		try {
-			$response StripeCharge::create($options);
+			$response = StripeCharge::create($options);
 		} catch(StripeErrorCard $e) {
 			Log::error("Caught Stripe purchase failure: " . $e);
 			return false;
