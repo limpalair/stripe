@@ -1,2 +1,2 @@
-script: 
-	- phpunit --verbose
+script:
+  - phpunit --verbose
