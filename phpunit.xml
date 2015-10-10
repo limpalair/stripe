@@ -14,7 +14,4 @@
             <directory suffix=".php">./tests/</directory>
         </testsuite>
     </testsuites>
-    <php>
-        <env name="STRIPE_API_SECRET_TEST" value="sk_test_Qz0DuTbrosLiuFvvDMN2q1iY"/>
-    </php>
 </phpunit>
