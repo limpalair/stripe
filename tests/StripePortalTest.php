@@ -7,8 +7,13 @@
 
 use Limpalair\Stripe\StripePortal;
 
-class StripePortalTest extends PHPUnit_Framework_TestCase
+class StripePortalTest extends Orchestra\TestBench\TestCase
 {
+	protected function getEnvrionmentSetUp($app)
+	{
+		$app['config']->set('services.stripe.secret', 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY');
+	}
+	
 	public function testInstantiation()
 	{
 		$stripePortal = new StripePortal();
