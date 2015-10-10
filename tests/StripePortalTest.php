@@ -6,14 +6,15 @@
  */
 
 use Limpalair\Stripe\StripePortal;
+use Orchestra\TestBench\TestCase as TestCase;
 
-class StripePortalTest extends Orchestra\TestBench\TestCase
+class StripePortalTest extends TestCase
 {
 	protected function getEnvrionmentSetUp($app)
 	{
 		$app['config']->set('services.stripe.secret', 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY');
 	}
-	
+
 	public function testInstantiation()
 	{
 		$stripePortal = new StripePortal();
