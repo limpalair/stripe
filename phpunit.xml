@@ -16,5 +16,6 @@
     </testsuites>
     <php>
         <env name="STRIPE_SECRET" value="sk_test_Qz0DuTbrosLiuFvvDMN2q1iY" />
+        <env name="STRIPE_KEY" value="pk_test_LO1fWTzy7HGLjxb5E4BvdN2S" />
     </php>
 </phpunit>
