@@ -10,7 +10,7 @@ namespace Orchestra\Testbench\TestCase;
 
 use Limpalair\Stripe\StripePortal;
 
-class StripePortalTest extends \Orchestra\TestBench\TestCase
+class StripePortalTest extends \Orchestra\Testbench\TestCase
 {
 	protected function getEnvrionmentSetUp($app)
 	{

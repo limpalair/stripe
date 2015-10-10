@@ -7,4 +7,4 @@ install:
   - composer install --no-interaction --prefer-source
 
 script:
-  - phpunit --verbose --bootstrap=vendor/autoload.php
+  - phpunit --verbose
