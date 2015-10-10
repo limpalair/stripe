@@ -6,9 +6,8 @@
  */
 
 use Limpalair\Stripe\StripePortal;
-use Orchestra\TestBench\TestCase as TestCase;
 
-class StripePortalTest extends TestCase
+class StripePortalTest extends \Orchestra\TestBench\TestCase
 {
 	protected function getEnvrionmentSetUp($app)
 	{
