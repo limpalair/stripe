@@ -25,13 +25,13 @@ class StripePortalTest extends \Orchestra\Testbench\TestCase
 	public function testExpectedGetStripeKey()
 	{
 		$stripePortal = new StripePortal();
-		$this->expectedOutputString($stripePortal->getStripeKey());
+		$this->expectOutputString($stripePortal->getStripeKey());
 	}
 
 	public function testExpectedGetCurrency()
 	{
 		$stripePortal = new StripePortal();
-		$this->expectedOutputString($stripePortal->getCurrency());
+		$this->expectOutputString($stripePortal->getCurrency());
 	}
 
 	public function testExceptionChargeStripeCustomerNoCard()
