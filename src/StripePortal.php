@@ -49,7 +49,7 @@ class StripePortal
 		$secret = Config::get('services.stripe.secret');
 
 		if ( empty($secret) )
-			throw new InvalidArgumentException('Stripe API key not properly configured');
+			throw new \InvalidArgumentException('Stripe API key not properly configured');
 
 		return Config::get('services.stripe.secret');
 
@@ -93,7 +93,7 @@ class StripePortal
 		$options['amount'] = $amount;
 
 		if ( ! array_key_exists('source', $options) ) {
-			throw new InvalidArgumentException('Missing credit card information');
+			throw new \InvalidArgumentException('Missing credit card information');
 		}
 
 		try {
