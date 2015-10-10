@@ -33,7 +33,7 @@ class StripePortalTest extends \Orchestra\Testbench\TestCase
 
 	public function testExceptionChargeStripeCustomerNoCard()
 	{
-		$this->setExpectedExcetion('\InvalidArgumentException', 'Missing credit card information');
+		$this->setExpectedException('\InvalidArgumentException', 'Missing credit card information');
 
 		$stripePortal = new StripePortal();
 		$stripePortal->chargeStripeCustomer('1000', ['id' => 'cu_a340958gfkdj']);
