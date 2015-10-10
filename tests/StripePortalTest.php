@@ -1,4 +1,7 @@
 <?php
+
+namespace Orchestra\Testbench\TestCase;
+
 /**
  * Stripe Portal Testing.
  *
