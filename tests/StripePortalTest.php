@@ -11,8 +11,6 @@ class StripePortalTest extends \Orchestra\Testbench\TestCase
 {
 	protected function getEnvironmentSetUp($app)
 	{
-		// parent::getEnvironmentSetUp($app);
-
 		$app['config']->set('services.stripe.secret', 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY');
 		Config::set('services.stripe.secret', 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY');
 	}
@@ -20,13 +18,6 @@ class StripePortalTest extends \Orchestra\Testbench\TestCase
 	public function testInstantiation()
 	{
 		$stripePortal = new StripePortal();
-	}
-
-	public function testExpectedGetStripeKey()
-	{
-		$stripePortal = new StripePortal();
-		$this->expectOutputString($stripePortal->getStripeKey());
-		print 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY';
 	}
 
 	public function testExpectedGetCurrency()
