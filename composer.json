@@ -13,11 +13,8 @@
         "php": ">=5.4.0",
         "illuminate/support": "~5.0",
         "stripe/stripe-php": "~3.0",
-        "symfony/http-kernel": "~2.3"
     },
     "require-dev": {
-        "illuminate/routing": "~5.0",
-        "illuminate/view": "~5.0",
         "phpunit/phpunit": "~3.0",
         "laravel/laravel": "~5.0",
         "orchestra/testbench": "~3.0"
