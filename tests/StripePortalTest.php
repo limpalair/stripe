@@ -11,7 +11,7 @@ class StripePortalTest extends \Orchestra\Testbench\TestCase
 {
 	protected function getEnvironmentSetUp($app)
 	{
-		$app['config']->set('services.stripe.secret', 'sk_test_Qz0DuTbrosLiuFvvDMN2q1iY');
+		$app['config']->set('services.stripe.secret', getenv('STRIPE_SECRET'));
 	}
 
 	public function testInstantiation()
