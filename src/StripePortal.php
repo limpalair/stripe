@@ -30,7 +30,7 @@ class StripePortal
 	protected static $currency = 'usd';
 	
 	/**
-	 * Create a new Stripe instance
+	 * Create a new StripePortal instance
 	 *
 	 * @return  void
 	 */
