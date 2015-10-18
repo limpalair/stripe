@@ -96,6 +96,10 @@ class StripePortal
 			throw new \InvalidArgumentException('Missing credit card information');
 		}
 
+		if ( ! array_key_exists('receipt_email', $options) && array_key_exists('email', $options) ) {
+			$options['receipt_email'] = $options['email'];
+		}
+
 		try {
 			$response = StripeCharge::create($options);
 		} catch(StripeErrorCard $e) {
